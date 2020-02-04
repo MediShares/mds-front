@@ -125,13 +125,8 @@ export default {
     isHomePage() {
       if (this.$route.path == "/" || this.$route.path == "/about") {
         this.isHome = true;
-        this.isCross = false;
-      } else if (to.path == "/crossChain") {
-        this.isHome = false;
-        this.isCross = true;
       } else {
         this.isHome = false;
-        this.isCross = false;
       }
     },
     changeLang(event) {
@@ -177,15 +172,10 @@ export default {
     $route(to, from) {
       if (this.$route.path == "/" || this.$route.path == "/about") {
         this.isHome = true;
-        this.isCross = false;
-      } else if (to.path == "/crossChain") {
-        this.isHome = false;
-        this.isCross = true;
       } else {
         this.isHome = false;
-        this.isCross = false;
       }
-      if (to.path == "/about" || to.path == "/crossChain") {
+      if (to.path == "/about") {
         $(".login").hide();
         $(".personal").hide();
       } else if ($(".currentAccount").html()) {
