@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import vueI18n from 'vue-i18n'
-import mathWallet from 'math-js-sdk'
+import mathwallet from 'math-js-sdk'
 Vue.use(vueI18n)
 
 /*

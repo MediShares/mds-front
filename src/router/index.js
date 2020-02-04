@@ -6,22 +6,34 @@ Vue.use(Router)
 export default new Router({
   routes: [{
       path: '/',
-      component: resolve => require(['@/components/home'], resolve)
+      component: resolve => require(['@/components/home'], resolve),
+      meta: {
+        login: true
+      },
     },
     // 项目列表
     {
       path: '/project',
-      component: resolve => require(['@/components/project'], resolve)
+      component: resolve => require(['@/components/project'], resolve),
+      meta: {
+        login: true
+      },
     },
     // 创建项目入口
     {
       path: '/projectCreate',
-      component: resolve => require(['@/components/project-create'], resolve)
+      component: resolve => require(['@/components/project-create'], resolve),
+      meta: {
+        login: true
+      },
     },
     // 创建项目步骤
     {
       path: '/projectStep',
-      component: resolve => require(['@/components/project-step'], resolve)
+      component: resolve => require(['@/components/project-step'], resolve),
+      meta: {
+        login: true
+      },
     },
     // 发布项目
     {
@@ -29,7 +41,10 @@ export default new Router({
       component: resolve => require(['@/components/project-release'], resolve),
       props: (route) => ({
         type: route.query.type
-      })
+      }),
+      meta: {
+        login: true
+      },
     },
     // 编辑项目
     {
@@ -37,7 +52,10 @@ export default new Router({
       component: resolve => require(['@/components/project-modify'], resolve),
       props: (route) => ({
         eosID: route.query.eosID
-      })
+      }),
+      meta: {
+        login: true
+      },
     },
     // 项目详情
     {
@@ -45,7 +63,10 @@ export default new Router({
       component: resolve => require(['@/components/project-detail'], resolve),
       props: (route) => ({
         id: route.query.id
-      })
+      }),
+      meta: {
+        login: true
+      },
     },
     // 购买产品
     {
@@ -60,17 +81,20 @@ export default new Router({
     {
       path: '/orderDetail',
       name: 'orderDetail',
-      component: resolve => require(['@/components/order-detail'], resolve)
+      component: resolve => require(['@/components/order-detail'], resolve),
+      meta: {
+        login: true
+      },
     },
     // 我的项目
     {
       path: '/myProject',
-      component: resolve => require(['@/components/my-project'], resolve)
+      component: resolve => require(['@/components/my-project'], resolve),
     },
     // 我支持的项目
     {
       path: '/projectBacked',
-      component: resolve => require(['@/components/project-backed'], resolve)
+      component: resolve => require(['@/components/project-backed'], resolve),
     },
     // 关于
     {
@@ -86,20 +110,15 @@ export default new Router({
     {
       path: '/supportList',
       name: 'supportList',
-      component: resolve => require(['@/components/support-list'], resolve)
+      component: resolve => require(['@/components/support-list'], resolve),
+      meta: {
+        login: true
+      },
     },
-    //MDS->EMDS跨链
+    //404
     {
-      path: '/crossChain',
-      component: resolve => require(['@/components/cross-chain'], resolve)
+      path: '*',
+      component: resolve => require(['@/components/404'], resolve)
     },
-    //MDS->EMDS跨链DApp
-    {
-      path: '/crossChainDApp',
-      component: resolve => require(['@/components/cross-chain-dapp'], resolve),
-      props: (route) => ({
-        blockchain: route.query.blockchain
-      })
-    }
   ]
 })

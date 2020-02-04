@@ -218,10 +218,8 @@ ul {
 /* 输入框 */
 
 label {
-  font-family: Gotham-Medium;
-  font-weight: 500;
+  font-family: 500 14px/1.43 Gotham-Medium;
   margin: 32px 0 16px;
-  line-height: 1.43;
 }
 
 .basic-input {
