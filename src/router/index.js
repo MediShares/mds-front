@@ -97,10 +97,10 @@ export default new Router({
       component: resolve => require(['@/components/project-backed'], resolve),
     },
     // 关于
-    {
-      path: '/about',
-      component: resolve => require(['@/components/about'], resolve)
-    },
+    // {
+    //   path: '/about',
+    //   component: resolve => require(['@/components/about'], resolve)
+    // },
     // 地址管理
     {
       path: '/address',
