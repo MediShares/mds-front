@@ -57,9 +57,9 @@ var getCookie = function(name, value, options) {
  * 获取浏览器语言类型
  */
 var getNavLanguage = function() {
-  var navLanguage = (navigator.browserLanguage || navigator.language).toLowerCase();
+  var navLanguage = (navigator.browserLanguage || navigator.language).toLowerCase().slice(0,2);
   switch (navLanguage) {
-    case 'zh-cn' || 'zh-tw' || 'zh-hk':
+    case 'zh':
       navLanguage = 'cn';
       break;
     case 'ko':
